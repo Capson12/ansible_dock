@@ -1,0 +1,13 @@
+- name: Configure Docker 
+  hosts: all
+  become: yes
+  become_user: root 
+  tasks: 
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+
+    - name: Install Docker
+      apt: 
+        name: Docker
+        state: present
