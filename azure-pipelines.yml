@@ -1,0 +1,25 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    backendServiceArm: 'SMTX-DEV-T01(afcccf6a-8d7e-43e6-872d-495ee3a79476)'
+    backendAzureRmResourceGroupName: 'SMTX-PLGD'
+    backendAzureRmStorageAccountName: 'smtxtfstate'
+    backendAzureRmContainerName: 'tfstatesafe'
+    backendAzureRmKey: 'pipefring'
+- task: TerraformTaskV4@4
+  inputs:
+    provider: 'azurerm'
+    command: 'apply'
+    environmentServiceNameAzureRM: 'SMTX-DEV-T01(afcccf6a-8d7e-43e6-872d-495ee3a79476)'
