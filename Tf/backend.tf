@@ -1,7 +1,9 @@
 terraform {
   backend "azurerm" {
-    storage_account_name = azurerm_storage_account.storage1.name
-    container_name       = azurerm_storage_container.continer1.name
-    key                  = "terraform.tfstate"
+    resource_group_name = "SMTX-PLGD"
+    storage_account_name = "smtxtfstate"
+    container_name       = "tfstatesafe"
+    key                  = "ansible_dock_file"
+
   }
 }
