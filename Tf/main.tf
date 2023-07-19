@@ -1,6 +1,6 @@
 terraform {
   required_providers {
-    azurerm {
+    azurerm = {
         source = "hashicorp/azurerm"
         version = "3.0.0"
     } 
@@ -14,7 +14,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg1" {
   name     = "backendApps"
-  location = "South UK"
+  location = "ussouth"
    
 }
 
