@@ -9,7 +9,7 @@ trigger:
 pool: default
 
 variables:
- bkstrgrg: 'smtxPLGD'
+ bkstrgrg: 'SMTx-PLGD'
  bkstrg: 'smtxtfstate'
  bkcontainer: 'pipelineconfig'
  
