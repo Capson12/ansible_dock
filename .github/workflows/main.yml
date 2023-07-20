@@ -15,5 +15,5 @@ jobs:
 
       - name: Push to Azure
         run: |
-          git remote add azure-devops "<https://symtexdev@dev.azure.com/symtexdev/ansible_dock/_git/ansible_dock_GH>"
+          git remote add azure-devops "https://symtexdev@dev.azure.com/symtexdev/ansible_dock/_git/ansible_dock_GH"
           git push azure-devops HEAD:main
