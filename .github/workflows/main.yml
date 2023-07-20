@@ -11,9 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: checkout repositry 
-      uses: actions/checkout@v2
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
-    - name: push to Azure
-      run: git remote add azure-devops <https://symtexdev@dev.azure.com/symtexdev/ansible_dock/_git/ansible_dock_GH>
+      - name: Push to Azure
+        run: |
+          git remote add azure-devops "<https://symtexdev@dev.azure.com/symtexdev/ansible_dock/_git/ansible_dock_GH>"
           git push azure-devops HEAD:main
