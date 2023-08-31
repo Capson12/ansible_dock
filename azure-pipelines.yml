@@ -3,7 +3,23 @@
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
 
-trigger:
-- main
+trigger: none
 
-pool: default
+
+pool:  default
+
+
+#Creating the Variables that will call on to the Storage account that will house the meta data for the pipeline.
+variables:
+  bkstrgrg: 'SMTX-PLGD'
+  bkstrg: 'smtxtfstate'
+  bkcontainer: 'pipeline-ansibledock'
+  bkstrgkey: 'Ansbible_dock_pipe'
+
+stages:
+  - stage: tfvalidate
+    jobs:
+      - job: validate
+        continueOnError: false
+        steps:
+          

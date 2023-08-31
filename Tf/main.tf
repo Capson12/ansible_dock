@@ -14,7 +14,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rg1" {
   name     = "backendApps"
-  location = "ussouth"
+  location = "uksouth"
    
 }
 
